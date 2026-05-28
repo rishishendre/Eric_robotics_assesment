@@ -85,8 +85,6 @@ ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 map odom
 ```
 This confirmed the map server was working. Once AMCL was running in the localization step, it took over publishing this transform automatically.
 
-> 📸 _[Add screenshot of map visible in RViz here]_
-
 ---
 
 ### Challenge 2 — Planner Loop Missed Desired Rate
@@ -100,8 +98,6 @@ The controller was receiving goals before the planner had finished computing the
 **Root Cause:** The `expected_planner_frequency` in `nav2_params.yaml` was set too high relative to what the system could achieve, and the controller frequency was mismatched.
 
 **Solution:** Reduced `expected_planner_frequency` to a value the system could sustain, and ensured `controller_frequency` was lower than the planner frequency so the controller waits for a valid path before attempting to follow it.
-
-> 📸 _[Add screenshot of terminal showing stable frequencies here]_
 
 ---
 
@@ -122,8 +118,6 @@ decel_lim_theta: -3.2
 min_speed_theta: 0.3
 RotateToGoal.slowing_factor: 5.0
 ```
-
-> 📸 _[Add screenshot/GIF of robot navigating successfully here]_
 
 ---
 
@@ -162,7 +156,7 @@ ros2 launch testbed_navigation navigation.launch.py
 
 ## Demo
 
-> 🎥 _[Add full navigation demo video here]_
+[Watch Demo Video](https://drive.google.com/file/d/1KTF1V_9mh8EPJ1f3G7SobcM5nUyMGl_0/view?usp=sharing)
 
 ---
 ## Contact Info
